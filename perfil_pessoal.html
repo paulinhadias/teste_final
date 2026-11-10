@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecta | Portfólio do estudante</title>
+    <link rel="stylesheet" href="estilo_comum.css">
+    <link rel="stylesheet" href="perfil_pessoal.css">
+</head>
+
+<body>
+<!-- Cabeçalho -->
+<header class="top">
+    <a href="index.html" class="logo" aria-label="Conecta - Página Inicial">
+        <span class="logo-icon" aria-hidden="true">✣</span>
+        conecta.
+    </a>
+
+    <nav class="nav" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="explorar.html">Explorar</a>
+        <a href="talentos.html">Talentos</a>
+        <a href="oportunidades.html">Oportunidades</a>
+    </nav>
+
+    <div class="search-container" id="searchContainer">
+        <input type="search" id="searchInput" placeholder="Buscar projetos, pessoas ou áreas..." aria-label="Campo de busca">
+        <button class="search-toggle" id="searchToggle" type="button" aria-label="Abrir busca">
+            <svg viewBox="0 0 24 24" width="19" height="19"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4.35-4.35"></path></svg>
+        </button>
+    </div>
+
+    <button class="notification-btn" type="button" aria-label="Notificações">
+        <svg viewBox="0 0 24 24" width="19" height="19"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+    </button>
+
+    <div class="profile-menu" id="profileMenu">
+        <button class="profile-avatar" id="profileToggle" type="button" aria-expanded="false" aria-label="Menu do perfil">LS</button>
+        <div class="profile-dropdown" id="profileDropdown">
+            <a href="perfil_pessoal.html">Meu Perfil Pessoal</a>
+            <a href="perfil_profissional.html">Perfil Profissional</a>
+            <a href="#">Configurações</a>
+            <a href="#">Sair</a>
+        </div>
+    </div>
+</header>
+
+    <main class="layout" id="inicio">
+
+        <!-- Barra lateral: perfil -->
+        <aside class="sidebar" id="perfil">
+
+            <!-- Foto de perfil e botão para editar -->
+            <div class="profile-image-wrap">
+
+                <!-- Foto ou iniciais do estudante -->
+                <div
+                    class="profile-image"
+                    id="profileImage"
+                    aria-label="Foto de perfil de Larissa Souza"
+                >
+                    LS
+                </div>
+
+                <!-- Botão com ícone de lápis -->
+                <button
+                    class="edit-profile-image"
+                    id="editProfileImage"
+                    type="button"
+                    aria-label="Editar foto de perfil"
+                    title="Editar foto de perfil"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L8 18l-4 1 1-4Z"/>
+                    </svg>
+                </button>
+
+            </div>
+
+            <!-- Nome e informações básicas -->
+            <h1 id="studentName">Larissa Souza</h1>
+
+            <p class="subtitle">
+                Estudante de Comunicação
+            </p>
+
+            <!-- Localização -->
+            <div class="location">
+                ⚲
+                <span id="location">Itabuna, Bahia</span>
+            </div>
+
+            <!-- Disponibilidade para projetos -->
+            <div class="availability">
+                <i></i>
+                Disponível para projetos
+            </div>
+
+            <!-- Biografia do estudante -->
+            <p class="bio">
+                “Apresento projetos acadêmicos, pessoais e profissionais
+                que conectam criatividade, estratégia e comunicação visual.”
+            </p>
+
+            <!-- Botões de interação -->
+            <button class="follow-btn" id="followBtn">
+                ＋ Seguir
+            </button>
+
+            <button class="message-btn" id="messageBtn">
+                Enviar mensagem
+            </button>
+
+            <!-- Estatísticas do perfil -->
+            <div class="stats">
+
+                <div>
+                    <strong id="projectCount">12</strong>
+                    <span>Produções</span>
+                </div>
+
+                <div>
+                    <strong id="followers">240</strong>
+                    <span>Seguidores</span>
+                </div>
+
+                <div>
+                    <strong id="following">85</strong>
+                    <span>Seguindo</span>
+                </div>
+
+            </div>
+
+            <!-- Link para o perfil profissional -->
+            <a class="profile-link" href="perfil_profissional.html">
+                Ver perfil profissional →
+            </a>
+
+            <!-- Informações sobre a área de atuação -->
+            <section class="side-section">
+
+                <h3>PERFIL</h3>
+
+                <label>Área principal</label>
+                <p>Design e Comunicação Digital</p>
+
+                <label>Interesses</label>
+                <p>Publicidade • Audiovisual</p>
+
+                <label>Atuação</label>
+                <p>Estágio • Freelance • Projetos</p>
+
+            </section>
+
+            <!-- Competências e habilidades -->
+            <section class="side-section">
+
+                <h3>COMPETÊNCIAS</h3>
+
+                <div class="tags">
+                    <span>Branding</span>
+                    <span>Design</span>
+                    <span>Fotografia</span>
+                    <span>Figma</span>
+                    <span>Marketing</span>
+                    <span>Audiovisual</span>
+                </div>
+
+            </section>
+
+            <!-- Contatos e redes sociais -->
+            <section class="contact-box" id="oportunidades">
+
+                <strong>Contato e redes</strong>
+
+                <p>
+                    <button data-contact="Instagram">Instagram</button>
+                    ·
+                    <button data-contact="WhatsApp">WhatsApp</button>
+                    ·
+                    <button data-contact="E-mail">E-mail</button>
+                </p>
+
+            </section>
+
+        </aside>
+
+        <!-- Área principal projetos -->
+        <section class="main-content" id="projetos">
+
+            <!-- Título e botões de ação -->
+            <div class="page-heading">
+
+                <div>
+                    <h2>Meus Projetos</h2>
+
+                    <p>
+                        Conheça minhas produções e experiências na área.
+                    </p>
+                </div>
+
+                <div style="display:flex; gap:8px; flex-wrap:wrap">
+
+                    <!-- Botão para adicionar projeto -->
+                    <a id="addProject" class="add-btn" href="montar_portfolio.html">
+                        + Adicionar projeto
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Resumo das produções -->
+            <div class="summary">
+
+                <div>
+                    <strong id="totalProjects">12 projetos</strong>
+                    <span>Portfólio atualizado</span>
+                </div>
+
+                <div>
+                    <strong id="academicCount">6 acadêmicos</strong>
+                    <span>Produções de curso</span>
+                </div>
+
+                <div>
+                    <strong id="professionalCount">4 profissionais</strong>
+                    <span>Experiência aplicada</span>
+                </div>
+
+                <div>
+                    <strong id="personalCount">2 pessoais</strong>
+                    <span>Exploração criativa</span>
+                </div>
+
+            </div>
+
+            <!-- Filtros e ordenação -->
+            <div class="filters">
+
+                <!-- Filtros por categoria -->
+                <div
+                    class="filter-tabs"
+                    role="group"
+                    aria-label="Filtrar projetos"
+                >
+                    <button class="filter active" data-filter="Todos">
+                        Todos
+                    </button>
+
+                    <button class="filter" data-filter="Acadêmico">
+                        Acadêmicos
+                    </button>
+
+                    <button class="filter" data-filter="Profissional">
+                        Profissionais
+                    </button>
+
+                    <button class="filter" data-filter="Pessoal">
+                        Pessoais
+                    </button>
+
+                    <button class="filter" data-filter="Voluntário">
+                        Voluntários
+                    </button>
+                </div>
+
+                <!-- Ordenação dos projetos -->
+                <label class="sort">
+                    Ordenar:
+
+                    <select id="sortSelect">
+                        <option value="recent">Mais recentes</option>
+                        <option value="old">Mais antigos</option>
+                        <option value="az">A–Z</option>
+                    </select>
+                </label>
+
+            </div>
+
+            <!-- Grade de projetos -->
+            <div class="results-heading">
+
+                <h3>Projetos</h3>
+
+                <span id="resultCount">
+                    12 resultados
+                </span>
+
+            </div>
+
+            <!-- Os cards são inseridos pelo JavaScript -->
+            <div class="project-grid" id="projectGrid"></div>
+
+            <!-- Paginação dos projetos -->
+            <div class="pagination" id="pagination"></div>
+
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        Conecta Portfólio · Projeto acadêmico demonstrativo
+    </footer>
+
+    <!-- Editar foto de perfil -->
+    <div
+        class="overlay"
+        id="profilePhotoModal"
+        aria-hidden="true"
+    >
+        <section
+            class="modal photo-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="photoModalTitle"
+        >
+
+            <!-- Cabeçalho do modal -->
+            <div class="modal-header">
+
+                <h2 id="photoModalTitle">
+                    Editar foto de perfil
+                </h2>
+
+                <button
+                    class="close"
+                    type="button"
+                    data-close="profilePhotoModal"
+                    aria-label="Fechar"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <p>
+                Escolha uma imagem para deixar seu perfil com a sua identidade.
+            </p>
+
+            <!-- Pré-visualização da foto -->
+            <div class="photo-preview" id="photoPreview">
+                LS
+            </div>
+
+            <input
+                type="file"
+                id="photoInput"
+                accept="image/*"
+                hidden
+            >
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="add-btn"
+                    id="saveProfilePhoto"
+                >
+                    Salvar foto
+                </button>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- Visualizar projeto -->
+
+    <div
+        class="overlay"
+        id="viewProjectModal"
+        aria-hidden="true"
+    >
+        <section
+            class="modal project-view-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="viewProjectTitle"
+        >
+
+            <div class="modal-header">
+
+                <h2 id="viewProjectTitle">
+                    Projeto
+                </h2>
+
+                <button
+                    class="close"
+                    type="button"
+                    data-close="viewProjectModal"
+                    aria-label="Fechar"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <div id="viewProjectContent"></div>
+
+        </section>
+    </div>
+
+    <!-- Mensagem -->
+    <div
+        class="overlay"
+        id="messageModal"
+        aria-hidden="true"
+    >
+        <section
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="messageModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <h2 id="messageModalTitle">
+                    Enviar mensagem
+                </h2>
+
+                <button
+                    class="close"
+                    type="button"
+                    data-close="messageModal"
+                    aria-label="Fechar"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <p>
+                Entre em contato com Larissa Souza.
+            </p>
+
+            <textarea
+                id="messageText"
+                rows="5"
+                placeholder="Escreva sua mensagem..."
+            ></textarea>
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="add-btn"
+                    id="sendMessage"
+                >
+                    Enviar mensagem
+                </button>
+
+            </div>
+
+        </section>
+    </div>
+
+    <!-- Contatos -->
+    <div
+        class="overlay"
+        id="contactModal"
+        aria-hidden="true"
+    >
+        <section
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="contactModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <h2 id="contactModalTitle">
+                    Contato
+                </h2>
+
+                <button
+                    class="close"
+                    type="button"
+                    data-close="contactModal"
+                    aria-label="Fechar"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <div id="contactContent"></div>
+
+        </section>
+    </div>
+
+    <!-- Arquivo JavaScript -->
+    <script src="cabecalho.js"></script>
+    <script src="perfil_pessoal.js"></script>
+
+</body>
+</html>

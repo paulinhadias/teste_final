@@ -1,0 +1,476 @@
+/* Base */
+
+* {
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Cabeçalho */
+
+.top {
+    min-height: 66px;
+    padding: 0 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: #fff;
+    border-bottom: 1px solid #e8edef;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 66px;
+    color: #252b35;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #202b35;
+    font-size: 23px;
+    font-weight: 800;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.top,
+.top * {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif !important;
+    letter-spacing: normal;
+}
+
+.top .logo {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0;
+    padding: 0;
+    color: #202b35;
+    font-size: 23px;
+    line-height: 1;
+    font-weight: 800;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.top .logo-icon {
+    color: #168c87;
+    font-size: 27px;
+    line-height: 1;
+    font-weight: 800;
+}
+
+.top .nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+}
+
+.top .nav a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #252b35;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+}
+
+.top .nav a:hover,
+.top .nav a.active {
+    color: #168c87;
+}
+
+.top .search-container {
+    margin-left: auto;
+    width: 42px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin: 0 0 0 auto;
+    padding: 0;
+    min-width: 42px;
+    background: transparent;
+}
+
+.top .search-container.active {
+    width: min(400px, 32vw);
+    border-color: #dce4e8;
+    background: #fff;
+}
+
+.top .search-container input {
+    width: 0;
+    min-width: 0;
+    opacity: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 13px;
+    transition: width 0.3s ease, opacity 0.2s ease;
+    display: block;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #252b35;
+    line-height: normal;
+    font-weight: 400;
+}
+
+.top .search-container.active input {
+    width: 100%;
+    opacity: 1;
+    padding: 0 0 0 14px;
+}
+
+.top .search-container input::placeholder {
+    color: #8a959c;
+    font-size: 13px;
+}
+
+.top .search-toggle {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #28343b;
+    flex: 0 0 42px;
+    min-width: 42px;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+.top .search-toggle svg,
+.top .notification-btn svg {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    display: block;
+}
+
+.top .notification-btn {
+    flex-shrink: 0;
+    width: 35px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border: none;
+    background: transparent;
+    color: #33434b;
+    cursor: pointer;
+    flex: 0 0 35px;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+.top .notification-btn:hover {
+    color: #168c87;
+}
+
+.top .profile-menu {
+    position: relative;
+    flex-shrink: 0;
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
+}
+
+.top .profile-avatar {
+    width: 39px;
+    height: 39px;
+    border: none;
+    border-radius: 50%;
+    background: #e5f0ef;
+    color: #168c87;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    min-width: 39px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.top .profile-avatar:hover {
+    background: #d6e9e7;
+}
+
+.top .profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 180px;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid #e5ebed;
+    border-radius: 9px;
+    box-shadow: 0 8px 25px #00000012;
+    margin: 0;
+    z-index: 10;
+}
+
+.top .profile-menu.open .profile-dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.top .profile-dropdown a {
+    padding: 11px;
+    border-radius: 5px;
+    color: #45525a;
+    font-size: 12px;
+    text-decoration: none;
+    display: block;
+    margin: 0;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.top .profile-dropdown a:hover {
+    background: #edf6f5;
+    color: #168c87;
+}
+
+/* Telas Menores */
+
+@media (max-width: 900px) {
+    .top {
+        flex-wrap: wrap;
+        padding: 12px 4%;
+        height: auto;
+        min-height: 66px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .top {
+        gap: 8px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width: 900px) {
+    .top .nav {
+        position: static;
+        transform: none;
+        order: 3;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 20px;
+        overflow-x: auto;
+        padding: 8px 0;
+        left: auto;
+    }
+
+    .top .search-container.active {
+        width: min(300px, 40vw);
+    }
+
+}
+
+@media (max-width: 600px) {
+    .top .logo {
+        font-size: 20px;
+    }
+
+    .top .nav {
+        gap: 16px;
+    }
+
+    .top .nav a {
+        font-size: 13px;
+    }
+
+    .top .search-container.active {
+        width: min(240px, 55vw);
+    }
+
+}
+
+@media (max-width: 1050px) {
+    .top {
+        flex-wrap: wrap;
+    }
+
+}
+
+/* Mensagem Temporária (Toast) */
+
+.toast {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #182c33;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    z-index: 40;
+    font-size: 12px;
+    max-width: 90%;
+    text-align: center;
+}
+
+/* Modais */
+
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #10252b99;
+    z-index: 20;
+    place-items: center;
+    padding: 18px;
+}
+
+/* Botão Fechar */
+
+.close {
+    border: 0;
+    background: transparent;
+    font-size: 25px;
+    color: #667780;
+}
+
+/* Toast */
+
+.conecta-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translate(-50%, 12px);
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: #20343a;
+    color: #ffffff;
+    font-size: 13px;
+    box-shadow: 0 8px 24px #00000020;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease;
+    z-index: 9999;
+}
+
+.conecta-toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* Cards de Projeto */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px #203b3b10;
+}
+
+.project-image small {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.image-branding {
+    background: #d9e8dc;
+    color: #365b49;
+}
+
+.image-campaign {
+    background: #f0d8bd;
+    color: #8d4b2e;
+}
+
+.image-video {
+    background: #d9d8ed;
+    color: #514d83;
+}
+
+.image-editorial {
+    background: #ead9e2;
+    color: #8b4f6b;
+}
+
+.image-photo {
+    background: #dce6eb;
+    color: #456578;
+}
+
+.image-social {
+    background: #f0e8c9;
+    color: #83702e;
+}
+
+.project-info {
+    padding: 17px;
+}
+
+.project-type {
+    color: #168c87;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.project-info h3 {
+    margin: 8px 0 5px;
+    font-size: 17px;
+    color: #29343a;
+}
+
+.project-meta {
+    font-size: 10px;
+    color: #929ba0;
+}
+
+.project-info p {
+    min-height: 38px;
+    margin: 12px 0;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #707b81;
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecta | Montar portfólio</title>
+    <link rel="stylesheet" href="estilo_comum.css">
+    <link rel="stylesheet" href="montar_portfolio.css">
+</head>
+<body>
+<!-- Cabeçalho -->
+<header class="top">
+    <a href="index.html" class="logo" aria-label="Conecta - Página Inicial">
+        <span class="logo-icon" aria-hidden="true">✣</span>
+        conecta.
+    </a>
+
+    <nav class="nav" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="explorar.html">Explorar</a>
+        <a href="talentos.html">Talentos</a>
+        <a href="oportunidades.html">Oportunidades</a>
+    </nav>
+
+    <div class="search-container" id="searchContainer">
+        <input type="search" id="searchInput" placeholder="Buscar projetos, pessoas ou áreas..." aria-label="Campo de busca">
+        <button class="search-toggle" id="searchToggle" type="button" aria-label="Abrir busca">
+            <svg viewBox="0 0 24 24" width="19" height="19"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4.35-4.35"></path></svg>
+        </button>
+    </div>
+
+    <button class="notification-btn" type="button" aria-label="Notificações">
+        <svg viewBox="0 0 24 24" width="19" height="19"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+    </button>
+
+    <div class="profile-menu" id="profileMenu">
+        <button class="profile-avatar" id="profileToggle" type="button" aria-expanded="false" aria-label="Menu do perfil">LS</button>
+        <div class="profile-dropdown" id="profileDropdown">
+            <a href="perfil_pessoal.html">Meu Perfil Pessoal</a>
+            <a href="perfil_profissional.html">Perfil Profissional</a>
+            <a href="#">Configurações</a>
+            <a href="#">Sair</a>
+        </div>
+    </div>
+</header>
+
+<div class="subbar">
+    <a href="perfil_pessoal.html" class="back">← Voltar para o perfil</a>
+    <div class="status" id="saveStatus">Rascunho não salvo</div>
+</div>
+
+<!-- Área de trabalho -->
+<main class="workspace">
+
+    <!-- Editor do projeto -->
+    <section class="builder">
+        <div class="project-top">
+            <div class="cover-area" id="coverArea">
+                <img id="coverPreview" alt="Capa do projeto" hidden>
+                <div class="cover-placeholder" id="coverPlaceholder">
+                    <span>▧</span>
+                    <small>Capa do projeto</small>
+                    <small>Adicione uma imagem de destaque</small>
+                </div>
+                <div class="block-tools cover-tools">
+                    <button data-action="cover" title="Alterar capa">▦</button>
+                    <button data-action="cover" title="Editar capa">✎</button>
+                    <button data-action="removeCover" title="Remover capa">⌫</button>
+                </div>
+            </div>
+            <div class="project-heading">
+                <label>Tipo de trabalho</label>
+                <h1 id="projectTitleDisplay">Título do projeto</h1>
+                <div class="chips">
+                    <span id="categoryDisplay">Projeto Acadêmico</span>
+                    <span id="areaDisplay">Branding</span>
+                </div>
+            </div>
+        </div>
+        <div id="blocks" class="blocks"></div>
+        <button class="add-block wide" id="addBlockMain">＋ Adicionar bloco</button>
+    </section>
+
+    <!-- Painel lateral -->
+    <aside class="panel">
+
+        <!-- Adicionar conteúdo -->
+        <section class="panel-card">
+            <h2>Adicionar conteúdo</h2>
+            <div class="content-tools">
+                <button data-add="image"><b>▧</b><span>Imagem</span></button>
+                <button data-add="text"><b>T</b><span>Texto</span></button>
+                <button data-add="gallery"><b>▦</b><span>Galeria</span></button>
+                <button data-add="video"><b>▷</b><span>Vídeo / Áudio</span></button>
+                <button data-add="embed"><b>&lt;/&gt;</b><span>Incorporar</span></button>
+                <button data-add="about"><b>ⓘ</b><span>Sobre o projeto</span></button>
+                <button data-add="credits"><b>▤</b><span>Créditos</span></button>
+            </div>
+        </section>
+
+        <!-- Detalhes do projeto -->
+        <section class="panel-card">
+            <h2>Detalhes do projeto</h2>
+            <form id="detailsForm">
+                <label>Título *<input id="titleInput" required placeholder="Nome do projeto"></label>
+                <label>
+                    Tipo de projeto *
+                    <select id="categoryInput" required>
+                        <option value="">Selecione o tipo</option>
+                        <option>Projeto Acadêmico</option>
+                        <option>Projeto Profissional</option>
+                        <option>Projeto Pessoal</option>
+                        <option>Projeto Voluntário</option>
+                    </select>
+                </label>
+                <label>
+                    Área de atuação *
+                    <select id="areaInput" required>
+                        <option value="">Selecione a área</option>
+                        <option>Design gráfico</option>
+                        <option>Publicidade</option>
+                        <option>Audiovisual</option>
+                        <option>Fotografia</option>
+                        <option>Marketing</option>
+                        <option>Comunicação</option>
+                        <option>UX/UI Design</option>
+                        <option>Outra</option>
+                    </select>
+                </label>
+                <label>
+                    Ferramentas utilizadas
+                    <div class="tag-entry">
+                        <div id="toolsTags" class="tag-list"></div>
+                        <input id="toolsInput" placeholder="Digite e pressione Enter">
+                    </div>
+                </label>
+                <label>
+                    Competências
+                    <div class="tag-entry">
+                        <div id="skillsTags" class="tag-list"></div>
+                        <input id="skillsInput" placeholder="Digite e pressione Enter">
+                    </div>
+                </label>
+                <label>
+                    Colaboradores
+                    <input id="collaboratorsInput" placeholder="Adicionar colaboradores (opcional)">
+                </label>
+                <label>
+                    Função no projeto
+                    <select id="roleInput">
+                        <option value="">Selecione sua função</option>
+                        <option>Direção de arte</option>
+                        <option>Designer</option>
+                        <option>Redação</option>
+                        <option>Fotografia</option>
+                        <option>Produção</option>
+                        <option>Pesquisa</option>
+                        <option>Desenvolvimento</option>
+                        <option>Outra</option>
+                    </select>
+                </label>
+                <label>
+                    Ano de realização
+                    <select id="yearInput"><option value="">Selecione o ano</option></select>
+                </label>
+            </form>
+        </section>
+
+        <!-- Processo criativo -->
+        <section class="panel-card">
+            <h2>Processo criativo</h2>
+            <textarea id="processInput" rows="4" placeholder="Descreva o processo criativo..."></textarea>
+        </section>
+
+        <!-- Capa do projeto -->
+        <section class="panel-card">
+            <h2>Capa do projeto</h2>
+            <div class="upload-box" id="coverUpload">
+                <span>⇧</span>
+                <strong>Arraste sua imagem aqui</strong>
+                
+            </div>
+            <input type="file" id="coverFile" accept="image/*" hidden>
+        </section>
+        <div class="panel-actions">
+            <button class="outline" id="previewBtn">Visualizar</button>
+            <button class="outline" id="saveBtn">Salvar rascunho</button>
+            <button class="publish" id="publishBtn">Publicar</button>
+        </div>
+    </aside>
+</main>
+<div class="toast" id="toast"></div>
+
+<!-- Visualização do projeto -->
+<div class="overlay" id="previewOverlay">
+    <section class="preview-modal">
+        <header>
+            <h2>Visualização do projeto</h2>
+            <button class="close" data-close="previewOverlay">×</button>
+        </header>
+        <div id="previewContent"></div>
+    </section>
+</div>
+
+<!-- Editar bloco -->
+<div class="overlay" id="blockOverlay">
+    <section class="modal">
+        <header>
+            <h2 id="blockModalTitle">Adicionar conteúdo</h2>
+            <button class="close" data-close="blockOverlay">×</button>
+        </header>
+        <div id="blockFormArea"></div>
+    </section>
+</div>
+<input type="file" id="hiddenImageInput" accept="image/*" hidden multiple>
+<input type="file" id="hiddenVideoInput" accept="video/*,audio/*" hidden>
+
+<script src="cabecalho.js"></script>
+<script src="montar_portfolio.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecta | Oportunidades</title>
+    <link rel="stylesheet" href="estilo_comum.css">
+    <link rel="stylesheet" href="oportunidades.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="top">
+        <a href="index.html" class="logo" aria-label="Conecta - Página Inicial">
+            <span class="logo-icon" aria-hidden="true">✣</span>
+            conecta.
+        </a>
+
+        <nav class="nav" aria-label="Navegação principal">
+            <a href="index.html">Início</a>
+            <a href="explorar.html">Explorar</a>
+            <a href="talentos.html">Talentos</a>
+            <a href="oportunidades.html" class="active">Oportunidades</a>
+        </nav>
+
+        <div class="search-container" id="searchContainer">
+            <input type="search" id="searchInput" placeholder="Buscar projetos, pessoas ou áreas..." aria-label="Campo de busca">
+            <button class="search-toggle" id="searchToggle" type="button" aria-label="Abrir busca">
+                <svg viewBox="0 0 24 24" width="19" height="19"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4.35-4.35"></path></svg>
+            </button>
+        </div>
+
+        <button class="notification-btn" type="button" aria-label="Notificações">
+            <svg viewBox="0 0 24 24" width="19" height="19"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        </button>
+
+        <div class="profile-menu" id="profileMenu">
+            <button class="profile-avatar" id="profileToggle" type="button" aria-expanded="false" aria-label="Menu do perfil">LS</button>
+            <div class="profile-dropdown" id="profileDropdown">
+                <a href="perfil_pessoal.html">Meu Perfil Pessoal</a>
+                <a href="perfil_profissional.html">Perfil Profissional</a>
+                <a href="#">Configurações</a>
+                <a href="#">Sair</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="wrap">
+
+        <!-- Apresentação -->
+        <section class="hero">
+            <div>
+                <p class="eyebrow">CARREIRA & CONEXÕES</p>
+                <h1>Oportunidades para você</h1>
+                <p>Encontre vagas e dê o próximo passo na sua carreira.</p>
+            </div>
+            <button class="company-btn" id="openPost">＋ Publicar vaga</button>
+        </section>
+
+        <!-- Filtros de busca -->
+        <section class="filters">
+            <label>Área ou função
+                <input id="q" placeholder="Ex.: Design Gráfico">
+            </label>
+            <label>Cidade ou remoto
+                <input id="location" placeholder="Ex.: São Paulo, remoto">
+            </label>
+            <div class="types" id="types">
+                <button class="selected" data-type="Todos">Todas</button>
+                <button data-type="Estágio">Estágio</button>
+                <button data-type="Freelancer">Freelancer</button>
+                <button data-type="Júnior">Júnior</button>
+            </div>
+            <button class="clear" id="clear">Limpar filtros</button>
+        </section>
+
+        <div class="results-head">
+            <h2>Vagas encontradas</h2>
+            <span id="count">5 oportunidades</span>
+        </div>
+
+        <!-- Lista de vagas e detalhes -->
+        <div class="layout">
+            <section class="job-list" id="jobList"></section>
+            <section class="detail" id="detail"></section>
+        </div>
+    </main>
+
+    <!-- Publicar vaga -->
+    <div class="overlay" id="postOverlay">
+        <section class="modal">
+            <header>
+                <h2>Publicar uma oportunidade</h2>
+                <button class="close" id="closePost">×</button>
+            </header>
+            <p class="hint">Preencha as informações da vaga para apresentá-la aos estudantes.</p>
+
+            <form id="postForm">
+                <label>Nome da vaga *
+                    <input name="title" required placeholder="Ex.: Estágio em Design Gráfico">
+                </label>
+                <label>Empresa *
+                    <input name="company" required placeholder="Nome da empresa">
+                </label>
+
+                <div class="two">
+                    <label>Tipo de oportunidade *
+                        <select name="type" required>
+                            <option value="">Selecione</option>
+                            <option>Estágio</option>
+                            <option>Freelancer</option>
+                            <option>Júnior</option>
+                        </select>
+                    </label>
+                    <label>Área *
+                        <input name="area" required placeholder="Design, Comunicação...">
+                    </label>
+                </div>
+
+                <div class="two">
+                    <label>Localidade
+                        <input name="location" placeholder="Cidade - UF ou Remoto">
+                    </label>
+                    <label>Modelo
+                        <select name="mode">
+                            <option>Híbrido</option>
+                            <option>Remoto</option>
+                            <option>Presencial</option>
+                        </select>
+                    </label>
+                </div>
+
+                <label>Sobre a vaga
+                    <textarea name="about" rows="3" required placeholder="Apresente a oportunidade..."></textarea>
+                </label>
+                <label>Requisitos
+                    <textarea name="requirements" rows="3" placeholder="O que a pessoa precisa ter..."></textarea>
+                </label>
+                <label>Benefícios
+                    <textarea name="benefits" rows="2" placeholder="Benefícios oferecidos..."></textarea>
+                </label>
+
+                <button class="primary" type="submit">Publicar vaga</button>
+            </form>
+        </section>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="cabecalho.js"></script>
+    <script src="oportunidades.js"></script>
+</body>
+</html>

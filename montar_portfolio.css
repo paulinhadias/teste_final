@@ -1,0 +1,619 @@
+/* Base da Página */
+
+body {
+    margin: 0;
+    background: #f7f9fa;
+    color: #18232c;
+    font: 13px Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Barra de voltar */
+
+.subbar {
+    width: min(1440px, 96%);
+    margin: 18px auto 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back {
+    color: #5f6d76;
+    text-decoration: none;
+}
+
+.status {
+    font-size: 11px;
+    color: #7d8991;
+}
+
+/* Área de trabalho */
+
+.workspace {
+    width: min(1440px, 96%);
+    margin: 0 auto 30px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 18px;
+    align-items: start;
+}
+
+.builder {
+    min-width: 0;
+}
+
+/* Capa e título do projeto */
+
+.project-top {
+    background: #fff;
+    border: 1px solid #dfe6ea;
+    border-radius: 7px;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+.cover-area {
+    height: 220px;
+    background: #e5e8ec;
+    border: 1px solid #d0d6dc;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+.cover-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cover-placeholder {
+    text-align: center;
+    color: #7e8b95;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.cover-placeholder span {
+    font-size: 35px;
+}
+
+.cover-placeholder small {
+    font-size: 11px;
+}
+
+.block-tools {
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    display: flex;
+    background: #fff;
+    border: 1px solid #dbe1e5;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.block-tools button {
+    border: 0;
+    border-right: 1px solid #e3e7ea;
+    background: #fff;
+    padding: 5px 7px;
+    color: #53616a;
+}
+
+.block-tools button:last-child {
+    border-right: 0;
+}
+
+.project-heading {
+    padding: 10px 0 2px;
+}
+
+.project-heading label {
+    font-size: 11px;
+    color: #66747d;
+}
+
+.project-heading h1 {
+    font-size: 21px;
+    margin: 6px 0 8px;
+}
+
+.chips {
+    display: flex;
+    gap: 7px;
+}
+
+.chips span {
+    font-size: 10px;
+    background: #f3f5f6;
+    border: 1px solid #e1e6e9;
+    border-radius: 4px;
+    padding: 5px 9px;
+    color: #5d6a73;
+}
+
+/* Blocos de conteúdo */
+
+.blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.content-block {
+    background: #fff;
+    border: 1px solid #dfe6ea;
+    border-radius: 7px;
+    padding: 12px;
+    position: relative;
+    min-width: 0;
+}
+
+.block-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.block-head strong {
+    font-size: 12px;
+}
+
+.block-head .block-tools {
+    position: static;
+}
+
+.block-body {
+    min-height: 40px;
+}
+
+.block-body[contenteditable=true] {
+    outline: 1px dashed #b9c8cd;
+    outline-offset: 3px;
+}
+
+.block-body p {
+    margin: 0;
+    line-height: 1.6;
+    color: #5f6d76;
+}
+
+/* Bloco "Sobre o Projeto" */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.about-field {
+    border: 1px solid #e1e6e9;
+    background: #fafbfc;
+    border-radius: 4px;
+    padding: 9px;
+    min-height: 75px;
+}
+
+.about-field strong {
+    display: block;
+    font-size: 10px;
+    margin-bottom: 7px;
+}
+
+.about-field p {
+    font-size: 10px;
+    color: #7a8790;
+    min-height: 25px;
+}
+
+/* Blocos de imagem */
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.media-item {
+    min-height: 170px;
+    background: #e6e9ed;
+    border: 1px solid #d9dfe3;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.media-item img,
+.media-item video {
+    width: 100%;
+    height: 100%;
+    max-height: 360px;
+    object-fit: contain;
+}
+
+.media-item .empty-media {
+    color: #87939c;
+    font-size: 28px;
+}
+
+.media-item .remove-media {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border: 0;
+    background: #fff;
+    border-radius: 4px;
+    padding: 4px 7px;
+}
+
+/* Blocos de texto */
+
+.text-content {
+    white-space: pre-wrap;
+    line-height: 1.65;
+    color: #596771;
+}
+
+.credits-list {
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
+
+/* Botão adicionar bloco */
+
+.add-block {
+    display: block;
+    margin: 12px auto;
+    background: #fff;
+    border: 1px solid #d8dfe4;
+    border-radius: 5px;
+    padding: 10px 18px;
+    color: #27343d;
+    font-weight: 600;
+}
+
+.add-block:hover {
+    border-color: #168c87;
+    color: #168c87;
+}
+
+.add-block.wide {
+    width: 100%;
+    margin: 12px 0;
+}
+
+/* Painel lateral */
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: sticky;
+    top: 78px;
+    max-height: calc(100vh - 90px);
+    overflow: auto;
+    padding-right: 2px;
+}
+
+.panel-card {
+    background: #fff;
+    border: 1px solid #dfe6ea;
+    border-radius: 7px;
+    padding: 13px;
+}
+
+.panel-card h2 {
+    font-size: 13px;
+    margin: 0 0 12px;
+}
+
+/* Ferramentas de conteúdo */
+
+.content-tools {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+}
+
+.content-tools button {
+    min-height: 62px;
+    border: 1px solid #e0e6e9;
+    background: #fafbfc;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #42515b;
+}
+
+.content-tools button:hover {
+    border-color: #168c87;
+    background: #f0f8f7;
+}
+
+.content-tools b {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.content-tools span {
+    font-size: 10px;
+}
+
+/* Formulário de detalhes */
+
+.panel label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.panel input,
+.panel select,
+.panel textarea {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding: 9px;
+    border: 1px solid #d9e0e4;
+    border-radius: 4px;
+    background: #fff;
+    color: #44525c;
+    font-size: 11px;
+    outline-color: #168c87;
+}
+
+/* Tags de ferramentas e competências */
+
+.tag-entry {
+    border: 1px solid #d9e0e4;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.tag-entry input {
+    border: 0;
+    margin: 3px 0 0;
+    padding: 5px;
+    outline: 0;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #edf3f4;
+    border: 1px solid #dce5e7;
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.tag button {
+    border: 0;
+    background: transparent;
+    color: #687780;
+    padding: 0;
+}
+
+/* Envio da capa */
+
+.upload-box {
+    border: 1px dashed #cbd5db;
+    background: #fafbfc;
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: #6b7881;
+    text-align: center;
+}
+
+.upload-box span {
+    font-size: 20px;
+}
+
+.upload-box strong {
+    font-size: 11px;
+}
+
+.upload-box small {
+    font-size: 10px;
+}
+
+/* Botões do painel */
+
+.outline {
+    background: #fff;
+    border: 1px solid #d6dfe3;
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 11px;
+    color: #45535d;
+}
+
+.panel-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+}
+
+.publish {
+    background: #168c87;
+    border: 1px solid #168c87;
+    color: #fff;
+    border-radius: 4px;
+    padding: 9px 7px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.panel-actions button {
+    min-width: 0;
+}
+
+/* Janelas modais */
+
+.modal,
+.preview-modal {
+    background: #fff;
+    border-radius: 10px;
+    width: min(560px, 100%);
+    max-height: 90vh;
+    overflow: auto;
+    padding: 20px;
+}
+
+.modal header,
+.preview-modal header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.modal h2,
+.preview-modal h2 {
+    font-size: 17px;
+    margin: 0;
+}
+
+.modal label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 12px 0;
+}
+
+.modal input,
+.modal textarea,
+.modal select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #dfe6ea;
+    border-radius: 5px;
+}
+
+.modal .primary {
+    background: #168c87;
+    color: #fff;
+    border: 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 12px;
+}
+
+/* Visualização do projeto */
+
+.preview-modal {
+    width: min(900px, 100%);
+}
+
+.preview-cover {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.preview-block {
+    padding: 12px 0;
+    border-bottom: 1px solid #dfe6ea;
+}
+
+.preview-block h3 {
+    font-size: 16px;
+}
+
+.preview-block p {
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+/* Responsivo */
+
+@media (max-width: 1000px) {
+    .workspace {
+        grid-template-columns: minmax(0, 1fr) 275px;
+    }
+
+    .cover-area {
+        height: 180px;
+    }
+
+}
+
+@media (max-width: 760px) {
+    .workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+        position: static;
+        max-height: none;
+        overflow: visible;
+        order: -1;
+    }
+
+    .about-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cover-area {
+        height: 170px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .workspace {
+        width: 94%;
+    }
+
+    .cover-area {
+        height: 140px;
+    }
+
+    .project-heading h1 {
+        font-size: 18px;
+    }
+
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-actions {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .publish {
+        grid-column: 1/-1;
+    }
+
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecta | Talentos</title>
+    <link rel="stylesheet" href="estilo_comum.css">
+    <link rel="stylesheet" href="pagina_inicial.css">
+    <link rel="stylesheet" href="talentos.css">
+</head>
+
+<body>
+<!-- Cabeçalho -->
+<header class="top">
+    <a href="index.html" class="logo" aria-label="Conecta - Página Inicial">
+        <span class="logo-icon" aria-hidden="true">✣</span>
+        conecta.
+    </a>
+
+    <nav class="nav" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="explorar.html">Explorar</a>
+        <a href="talentos.html" class="active">Talentos</a>
+        <a href="oportunidades.html">Oportunidades</a>
+    </nav>
+
+    <div class="search-container" id="searchContainer">
+        <input type="search" id="searchInput" placeholder="Buscar projetos, pessoas ou áreas..." aria-label="Campo de busca">
+        <button class="search-toggle" id="searchToggle" type="button" aria-label="Abrir busca">
+            <svg viewBox="0 0 24 24" width="19" height="19"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4.35-4.35"></path></svg>
+        </button>
+    </div>
+
+    <button class="notification-btn" type="button" aria-label="Notificações">
+        <svg viewBox="0 0 24 24" width="19" height="19"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+    </button>
+
+    <div class="profile-menu" id="profileMenu">
+        <button class="profile-avatar" id="profileToggle" type="button" aria-expanded="false" aria-label="Menu do perfil">LS</button>
+        <div class="profile-dropdown" id="profileDropdown">
+            <a href="perfil_pessoal.html">Meu Perfil Pessoal</a>
+            <a href="perfil_profissional.html">Perfil Profissional</a>
+            <a href="#">Configurações</a>
+            <a href="#">Sair</a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <!-- Introdução -->
+    <section class="intro intro-simple">
+        <div class="intro-content">
+            <span class="eyebrow">TALENTOS</span>
+            <h1>Conheça os estudantes do Conecta</h1>
+            <p>
+                Veja os perfis dos estudantes cadastrados, descubra o que cada
+                um faz e clique no perfil para conhecer o portfólio completo.
+            </p>
+        </div>
+    </section>
+
+    <!-- Todos os talentos -->
+    <section class="projects-section" id="talentos">
+
+        <div class="section-heading">
+            <div>
+                <span class="eyebrow">ESTUDANTES CADASTRADOS</span>
+                <h2>Todos os talentos</h2>
+                <p id="resultCount">12 estudantes</p>
+            </div>
+        </div>
+
+        <!-- Filtros e ordenação -->
+        <div class="filter-bar">
+            <div class="filters">
+                <button class="filter active" data-filter="todos">Todos</button>
+                <button class="filter" data-filter="design">Design</button>
+                <button class="filter" data-filter="audiovisual">Audiovisual</button>
+                <button class="filter" data-filter="fotografia">Fotografia</button>
+                <button class="filter" data-filter="marketing">Marketing</button>
+                <button class="filter" data-filter="redacao">Redação</button>
+                <button class="filter" data-filter="disponivel">Disponíveis</button>
+            </div>
+
+            <select id="sortSelect" aria-label="Ordenar estudantes">
+                <option value="nome">Nome (A-Z)</option>
+                <option value="projetos">Mais projetos</option>
+            </select>
+        </div>
+
+        <!-- Grade de estudantes -->
+        <div class="talent-grid" id="talentGrid"></div>
+
+        <p class="empty-message" id="emptyMessage">Nenhum estudante encontrado.</p>
+
+    </section>
+
+</main>
+
+<!-- Rodapé -->
+<footer class="footer">
+        <a href="index.html" class="logo">conecta.</a>
+
+        <span>
+            Um espaço para criar, compartilhar e conectar.
+        </span>
+
+        <span>Protótipo acadêmico demonstrativo</span>
+    </footer>
+
+<script src="cabecalho.js"></script>
+<script src="talentos.js"></script>
+
+</body>
+</html>
